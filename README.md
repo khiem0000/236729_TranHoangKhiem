@@ -25,11 +25,107 @@ Xây dựng và triển khai hệ thống quản lý món ăn trên nền tảng
 - Thêm, cập nhật và xóa món ăn.
 - Tìm kiếm món ăn theo từ khóa.
 
+
 ## Hướng dẫn cài đặt và chạy
-Sẽ cập nhật lệnh cài đặt và chạy sau khi hoàn thành backend và frontend.
+
+### 1. Yêu cầu
+- Node.js và npm
+- MongoDB Atlas
+- Docker Desktop (nếu chạy bằng Docker)
+
+### 2. Chạy Backend
+
+Mở Terminal tại thư mục dự án:
+
+```bash
+cd backend
+npm ci
+```
+
+Tạo file `.env` dựa trên `.env.example` và cấu hình:
+
+```env
+PORT=5001
+DB_NAME=236729_TranHoangKhiem
+MONGODB_URI=YOUR_MONGODB_ATLAS_CONNECTION_STRING
+```
+
+Khởi động Backend:
+
+```bash
+npm run dev
+```
+
+Kiểm tra:
+- http://localhost:5001/health
+- http://localhost:5001/api/foods
+
+### 3. Chạy Frontend
+
+Mở Terminal thứ hai tại thư mục dự án:
+
+```bash
+cd frontend
+npm ci
+npm run dev
+```
+
+Truy cập:
+http://localhost:5173
+
+Frontend dùng Vite Proxy để kết nối Backend tại cổng 5001.
+
+### 4. Chạy bằng Docker
+
+Backend:
+
+```bash
+docker run -d --name food-backend \
+  --env-file backend/.env \
+  -e PORT=5000 \
+  -p 5501:5000 \
+  khiemth/backend:1.0
+```
+
+Frontend:
+
+```bash
+docker run -d --name food-frontend \
+  -p 5502:80 \
+  -e BACKEND_ORIGIN=http://host.docker.internal:5501 \
+  khiemth/frontend:1.0
+```
+
+Truy cập ứng dụng Docker:
+http://localhost:5502
+
+Frontend sử dụng Nginx Reverse Proxy để kết nối Backend.
+
+
 
 ## Liên kết triển khai
-Sẽ cập nhật URL Frontend, Backend và Docker Hub sau khi triển khai.
+
+### GitHub Repository
+https://github.com/khiem0000/236729_TranHoangKhiem
+
+### Docker Hub
+- Backend: https://hub.docker.com/r/khiemth/backend
+- Frontend: https://hub.docker.com/r/khiemth/frontend
+
+### Render
+- Frontend: https://web-236729.onrender.com
+- Backend API: https://api-236729.onrender.com
+
+### Các API kiểm tra
+- Health Check: https://api-236729.onrender.com/health
+- Danh sách món ăn: https://api-236729.onrender.com/api/foods
+- API qua Nginx: https://web-236729.onrender.com/api/foods
+
+### MongoDB Atlas
+- Cluster: Cluster0
+- Database: 236729_TranHoangKhiem
+- Collection: foods
+
 
 ## Câu 5 - Docker Backend
 
