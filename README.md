@@ -58,6 +58,18 @@ docker run -d --name food-frontend -p 5502:80 -e BACKEND_ORIGIN=http://host.dock
 Truy cập:
 http://localhost:5502
 
+## Câu 7 - Triển khai Frontend trên Render
+
+- Service: web-236729
+- Frontend URL: https://web-236729.onrender.com
+- Frontend API Proxy: https://web-236729.onrender.com/api/foods
+- Docker Image: khiemth/frontend:1.0
+- Backend Origin: https://api-236729.onrender.com
+
+Frontend sử dụng React, Docker và Nginx Reverse Proxy.
+Dữ liệu được lấy từ MongoDB Atlas thông qua Backend Express.
+
+
 ## Câu 8 - Triển khai Backend trên Render
 
 - Service: api-236729
