@@ -36,10 +36,10 @@ Sẽ cập nhật URL Frontend, Backend và Docker Hub sau khi triển khai.
 Docker Hub: https://hub.docker.com/r/khiemth/backend
 
 ### Build Backend
-docker buildx build --platform linux/amd64 -t khiewcokk/backend:1.0 --load ./backend
+docker buildx build --platform linux/amd64 -t khiemth/backend:1.0 --load ./backend
 
 ### Chạy Backend
-docker run -d --name food-backend --env-file backend/.env -e PORT=5000 -p 5501:5000 khiewcokk/backend:1.0
+docker run -d --name food-backend --env-file backend/.env -e PORT=5000 -p 5501:5000 khiemth/backend:1.0
 
 ### Kiểm tra
 - http://localhost:5501/health
