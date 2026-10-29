@@ -83,3 +83,32 @@ MONGODB_URI và DB_NAME trên Render.
 
 Hệ thống hỗ trợ lấy danh sách, xem chi tiết, thêm, sửa,
 xóa và tìm kiếm món ăn.
+
+## Câu 9 - Kiểm tra tổng thể và hoàn thiện bài nộp
+
+### Thông tin sinh viên
+- MSSV: 236729
+- Họ tên: TranHoangKhiem
+
+### Hệ thống đã triển khai
+- GitHub: https://github.com/khiem0000/236729_TranHoangKhiem
+- Docker Backend: https://hub.docker.com/r/khiemth/backend
+- Docker Frontend: https://hub.docker.com/r/khiemth/frontend
+- Frontend Render: https://web-236729.onrender.com
+- Backend Render: https://api-236729.onrender.com
+
+### MongoDB Atlas
+- Cluster: Cluster0
+- Database: 236729_TranHoangKhiem
+- Collection: foods
+- Dữ liệu mẫu: F001, F002, F003
+
+### Kiểm tra hệ thống
+- Frontend kết nối Backend qua Nginx Reverse Proxy.
+- Backend kết nối MongoDB Atlas.
+- API GET /health hoạt động.
+- API GET /api/foods trả danh sách món ăn.
+- Đã kiểm thử thêm, sửa, xóa món ăn.
+- Kiểm thử xem chi tiết và tìm kiếm món ăn.
+- Docker Images đã được đẩy lên Docker Hub.
+- Frontend và Backend được triển khai trên Render.
