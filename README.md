@@ -57,3 +57,17 @@ docker run -d --name food-frontend -p 5502:80 -e BACKEND_ORIGIN=http://host.dock
 
 Truy cập:
 http://localhost:5502
+
+## Câu 8 - Triển khai Backend trên Render
+
+- Service: api-236729
+- Backend URL: https://api-236729.onrender.com
+- Health Check: https://api-236729.onrender.com/health
+- Foods API: https://api-236729.onrender.com/api/foods
+- Docker Image: khiemth/backend:1.0
+
+Backend được kết nối MongoDB Atlas qua các biến môi trường
+MONGODB_URI và DB_NAME trên Render.
+
+Hệ thống hỗ trợ lấy danh sách, xem chi tiết, thêm, sửa,
+xóa và tìm kiếm món ăn.
