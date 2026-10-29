@@ -30,3 +30,17 @@ Sẽ cập nhật lệnh cài đặt và chạy sau khi hoàn thành backend và
 
 ## Liên kết triển khai
 Sẽ cập nhật URL Frontend, Backend và Docker Hub sau khi triển khai.
+
+## Câu 5 - Docker Backend
+
+Docker Hub: https://hub.docker.com/r/khiemth/backend
+
+### Build Backend
+docker buildx build --platform linux/amd64 -t khiewcokk/backend:1.0 --load ./backend
+
+### Chạy Backend
+docker run -d --name food-backend --env-file backend/.env -e PORT=5000 -p 5501:5000 khiewcokk/backend:1.0
+
+### Kiểm tra
+- http://localhost:5501/health
+- http://localhost:5501/api/foods
