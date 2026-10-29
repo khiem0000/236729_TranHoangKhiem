@@ -44,3 +44,16 @@ docker run -d --name food-backend --env-file backend/.env -e PORT=5000 -p 5501:5
 ### Kiểm tra
 - http://localhost:5501/health
 - http://localhost:5501/api/foods
+## Câu 6 - Docker Frontend
+
+Docker Hub:
+https://hub.docker.com/r/khiemth/frontend
+
+Build:
+docker buildx build --platform linux/amd64 -t khiemth/frontend:1.0 --load ./frontend
+
+Chạy Frontend:
+docker run -d --name food-frontend -p 5502:80 -e BACKEND_ORIGIN=http://host.docker.internal:5501 khiemth/frontend:1.0
+
+Truy cập:
+http://localhost:5502
